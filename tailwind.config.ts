@@ -32,6 +32,17 @@ export default {
 					DEFAULT: 'hsl(var(--secondary))',
 					foreground: 'hsl(var(--secondary-foreground))'
 				},
+				ebay: {
+					primary: '#0063D1',
+					accent: '#3665F3',
+					secondary: '#F8F8F8',
+					dark: '#333333',
+					yellow: '#FFDB15',
+					red: '#E53238',
+					green: '#86B817',
+					light: '#F5F5F5',
+					border: '#DDDDDD',
+				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
 					foreground: 'hsl(var(--destructive-foreground))'
