@@ -1,24 +1,10 @@
-
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Heart, Clock, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-export interface Product {
-  id: number;
-  title: string;
-  price: number;
-  image: string;
-  bidCount?: number;
-  timeLeft?: string;
-  shipping: string;
-  condition: string;
-  rating?: number;
-  isFeatured?: boolean;
-  isBuyNow?: boolean;
-  isAuction?: boolean;
-}
+import { Product } from "@/data/Product";
 
 interface ProductCardProps {
   product: Product;
@@ -30,14 +16,16 @@ const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <Card className="group overflow-hidden h-full border border-ebay-border hover:shadow-md transition-shadow duration-200">
       <div className="relative">
-        <div className="overflow-hidden h-48">
-          <img 
-            src={product.image} 
-            alt={product.title}
-            className="h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-300" 
-          />
-        </div>
-        
+        <Link to={`/product/${product.id}`}>
+          <div className="overflow-hidden h-48 cursor-pointer">
+            <img 
+              src={product.image} 
+              alt={product.title}
+              className="h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-300" 
+            />
+          </div>
+        </Link>
+
         <Button
           variant="ghost" 
           size="icon"
@@ -57,9 +45,11 @@ const ProductCard = ({ product }: ProductCardProps) => {
       </div>
 
       <CardContent className="p-4">
-        <h3 className="text-sm font-medium line-clamp-2 hover:text-ebay-primary cursor-pointer">
-          {product.title}
-        </h3>
+        <Link to={`/product/${product.id}`}>
+          <h3 className="text-sm font-medium line-clamp-2 hover:text-ebay-primary cursor-pointer">
+            {product.title}
+          </h3>
+        </Link>
         
         <div className="mt-2 space-y-1">
           <div className="flex items-center justify-between">
