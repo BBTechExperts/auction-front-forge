@@ -11,7 +11,7 @@ const Navbar = () => {
         {/* Top navbar with logo and account */}
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center">
+            <Link to="/products" className="flex items-center">
               <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-ebay-red via-ebay-primary to-ebay-green">
                 eBuy
               </h1>
@@ -48,6 +48,9 @@ const Navbar = () => {
             </Button>
             <Button variant="ghost" size="icon" className="text-ebay-dark">
               <User className="h-5 w-5" />
+            </Button>
+            <Button variant="ghost" size="icon" className="text-ebay-dark">
+              <Link to="/">🚩</Link>
             </Button>
           </nav>
         </div>
